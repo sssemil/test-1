@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button btnStart, btnStop;
+    private Button btnStart, btnStop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +20,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnStart.setOnClickListener(this);
         btnStop.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View view) {
-        if(view == btnStart){
+        if(view == btnStart) {
             startService(new Intent(this, MusicPlayback.class));
-        }else{
+        } else {
             stopService(new Intent(this, MusicPlayback.class));
         }
-
     }
 }
